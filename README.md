@@ -114,3 +114,18 @@ This repo is designed to be picked up by future Boolean Boyz cohorts. FOPL pages
 ## License
 
 MIT License — see [LICENSE](LICENSE) for details.
+
+## 2026–27 Capstone: Catalog Improvements
+
+Raadin Ansari (@raadinansari-pixel) will improve catalog search and
+filtering so FOPL customers can find books more easily.
+
+Requirements:
+- Search returns matching books.
+- Filters show books in the selected category.
+- Searches with no matches display a clear message.
+
+Local testing: The frontend and Flask backend ran successfully,
+and the catalog loaded books through /api/fopl/books.
+
+Planned work: https://github.com/FOPL-Team-2026/bb-pages/issues/1
