@@ -8,7 +8,7 @@ with open(path, "rb") as f:
 idx1 = data.find(b"<<<<<<< HEAD")
 idx2 = data.find(b"=======")
 idx3 = data.find(b">>>>>>>")
-print(f"Found markers at byte offsets: HEAD={idx1}, ======={idx2}, >>>>>>>={idx3}"
+print(f"Found markers at byte offsets: HEAD={idx1}, ======={idx2}, >>>>>>>={idx3}")
 
 if idx1 >= 0 and idx2 > idx1 and idx3 > idx2:
     # Find the line start of <<<<<<< HEAD
