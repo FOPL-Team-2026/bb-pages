@@ -7,3 +7,5 @@ gem "csv"
 
 gem "execjs", "~> 2.8"
 gem "faraday-retry", "~> 2.3"
+
+gem "bigdecimal"
