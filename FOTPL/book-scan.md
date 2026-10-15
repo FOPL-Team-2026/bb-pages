@@ -7,7 +7,7 @@ fopl_nav_active: admin
 ---
 
 <style>
-  body { background: #f4f8f4; }
+  body { background: #f4f8f4; }.
 
   .fopl-hero {
     background: #023b0f; color: #fff; text-align: center; padding: 40px 24px 32px;
