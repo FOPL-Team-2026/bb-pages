@@ -202,15 +202,15 @@ fopl_nav_active: admin
       <form id="add-form">
         <div class="scan-form-grid">
           <div class="scan-field">
-            <label>Price ($)</label>
+            <label for="field-price">Price ($)</label>
             <input type="number" id="field-price" step="0.25" min="0" placeholder="1.00" required>
           </div>
           <div class="scan-field">
-            <label>Quantity</label>
+            <label for="field-quantity">Quantity</label>
             <input type="number" id="field-quantity" min="1" value="1" required>
           </div>
           <div class="scan-field">
-            <label>Condition</label>
+            <label for="field-condition">Condition</label>
             <select id="field-condition" required>
               <option value="" disabled selected>Select</option>
               <option value="Like New">Like New</option>
@@ -220,7 +220,7 @@ fopl_nav_active: admin
             </select>
           </div>
           <div class="scan-field">
-            <label>Age Group</label>
+            <label for="field-age">Age Group</label>
             <select id="field-age" required>
               <option value="" disabled selected>Select</option>
               <option value="Kids">Kids</option>
