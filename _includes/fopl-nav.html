@@ -1,8 +1,8 @@
 <nav class="fopl-nav">
   <div class="fopl-nav-left">
     <ul class="fopl-nav-links fopl-nav-links--left">
-      <li{% if page.fopl_nav_active == 'home' %} class="active"{% endif %}><a href="/home">Home</a></li>
-      <li{% if page.fopl_nav_active == 'bookstore' %} class="active"{% endif %}><a href="/bookstore">Shop</a></li>
+      <li{% if page.fopl_nav_active == 'home' %} class="active"{% endif %}><a href="{{ '/home' | relative_url }}">Home</a></li>
+      <li{% if page.fopl_nav_active == 'bookstore' %} class="active"{% endif %}><a href="{{ '/bookstore' | relative_url }}">Shop</a></li>
     </ul>
   </div>
   <div class="fopl-nav-right">
@@ -25,9 +25,9 @@
           <svg class="fopl-dark-icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </button>
       </li>
-      <li id="nav-auth-item"><a href="/login" id="nav-auth-link">Sign In</a>
+      <li id="nav-auth-item"><a href="{{ '/login' | relative_url }}" id="nav-auth-link">Sign In</a>
         <ul class="fopl-nav-dropdown" id="nav-auth-dropdown">
-          <li><a href="/profile">Profile</a></li>
+          <li><a href="{{ '/profile' | relative_url }}">Profile</a></li>
           <li><a href="#" id="nav-signout-btn">Sign Out</a></li>
         </ul>
       </li>

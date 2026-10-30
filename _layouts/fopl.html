@@ -10,6 +10,7 @@
 </head>
 <body style="margin:0;padding:0;">
   <script>if(location.protocol==='http:'&&location.hostname!=='localhost'&&location.hostname!=='127.0.0.1')location.replace('https:'+location.href.slice(5));</script>
+  <script>window.FOPL_HOME = {{ "/home" | relative_url | jsonify }};</script>
   <script src="{{ '/assets/js/fopl-shared.js' | relative_url }}"></script>
   {% include fopl-nav.html %}
   {{ content }}
