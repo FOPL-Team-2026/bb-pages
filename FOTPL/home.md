@@ -707,9 +707,9 @@ fopl_nav_active: home
       through fundraising, advocacy, and community programs.
     </p>
     <div class="fopl-hero-btns fopl-reveal">
-      <a class="fopl-hero-btn primary" href="/bookstore">Visit Our Bookstore</a>
-      <a class="fopl-hero-btn outline" href="/volunteer">Get Involved</a>
-      <a class="fopl-hero-btn games" href="/puzzles">Play Games</a>
+      <a class="fopl-hero-btn primary" href="{{ '/bookstore' | relative_url }}">Visit Our Bookstore</a>
+      <a class="fopl-hero-btn outline" href="{{ '/volunteer' | relative_url }}">Get Involved</a>
+      <a class="fopl-hero-btn games" href="{{ '/puzzles' | relative_url }}">Play Games</a>
     </div>
   </div>
   <div class="fopl-scroll-hint">
@@ -748,7 +748,7 @@ fopl_nav_active: home
       </div>
       <div class="fopl-card-back">
         <p>Browse thousands of titles organized by genre. New inventory arrives weekly from generous community donations.</p>
-        <a href="/bookstore">Browse the Store</a>
+        <a href="{{ '/bookstore' | relative_url }}">Browse the Store</a>
       </div>
     </div>
   </div>
@@ -764,7 +764,7 @@ fopl_nav_active: home
       </div>
       <div class="fopl-card-back">
         <p>Monthly updates featuring upcoming events, new arrivals, volunteer spotlights, and community stories.</p>
-        <a href="/news">Read Newsletters</a>
+        <a href="{{ '/news' | relative_url }}">Read Newsletters</a>
       </div>
     </div>
   </div>
@@ -780,7 +780,7 @@ fopl_nav_active: home
       </div>
       <div class="fopl-card-back">
         <p>Join our team of dedicated volunteers. Flexible schedules available — every hour makes a difference.</p>
-        <a href="/contact">Join Us</a>
+        <a href="{{ '/contact' | relative_url }}">Join Us</a>
       </div>
     </div>
   </div>
@@ -796,7 +796,7 @@ fopl_nav_active: home
       </div>
       <div class="fopl-card-back">
         <p>Located inside the Poway Branch Library. Call us at <strong>858-513-2862</strong> for hours and directions.</p>
-        <a href="/contact">Get Directions</a>
+        <a href="{{ '/contact' | relative_url }}">Get Directions</a>
       </div>
     </div>
   </div>
@@ -828,23 +828,23 @@ fopl_nav_active: home
 <div class="fopl-quick-links fopl-reveal">
   <h2>Explore More</h2>
   <div class="fopl-quick-links-grid">
-    <a class="fopl-quick-link" href="/history">
+    <a class="fopl-quick-link" href="{{ '/history' | relative_url }}">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
       History
     </a>
-    <a class="fopl-quick-link" href="/catalog">
+    <a class="fopl-quick-link" href="{{ '/catalog' | relative_url }}">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
       Catalog
     </a>
-    <a class="fopl-quick-link" href="/news">
+    <a class="fopl-quick-link" href="{{ '/news' | relative_url }}">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
       Newsletters
     </a>
-    <a class="fopl-quick-link" href="/puzzles">
+    <a class="fopl-quick-link" href="{{ '/puzzles' | relative_url }}">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="9" height="9" rx="1"/><rect x="13" y="2" width="9" height="9" rx="1"/><rect x="2" y="13" width="9" height="9" rx="1"/><rect x="13" y="13" width="9" height="9" rx="1"/></svg>
       Puzzles &amp; Games
     </a>
-    <a class="fopl-quick-link" href="/contact">
+    <a class="fopl-quick-link" href="{{ '/contact' | relative_url }}">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       Contact Us
     </a>
