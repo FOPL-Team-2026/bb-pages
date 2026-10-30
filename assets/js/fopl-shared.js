@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function initAuthNav() {
         method: 'DELETE', credentials: 'include'
       }).catch(function() {});
       localStorage.removeItem('fopl_user');
-      window.location.href = '/home';
+      window.location.href = window.FOPL_HOME;
     };
   }
 });
