@@ -599,18 +599,33 @@ function findSimilar(query, n = 3) {
 
 // ── Fetch books ──
 async function loadBooks() {
+  const grid = document.getElementById('book-grid');
+  const count = document.getElementById('result-count');
+
+  count.textContent = 'Loading books…';
+  grid.innerHTML =
+    '<div class="empty-state" style="grid-column:1/-1" role="status"><h3>Loading books…</h3><p>Please wait while we retrieve the catalog.</p></div>';
+
   try {
     const params = new URLSearchParams();
-    if (searchQ)    params.set('q', searchQ);
-    if (activeAge)  params.set('age', activeAge);
+    if (searchQ) params.set('q', searchQ);
+    if (activeAge) params.set('age', activeAge);
     if (activeCond) params.set('condition', activeCond);
-    const res  = await fetch(`${BACKEND}/api/fopl/books?${params}`);
-    allBooks   = (await res.json()).filter(b => b.age_group !== 'Adult');
+
+    const res = await fetch(`${BACKEND}/api/fopl/books?${params}`);
+    if (!res.ok) throw new Error('Catalog request failed');
+
+    const data = await res.json();
+    if (!Array.isArray(data)) throw new Error('Unexpected catalog response');
+
+    allBooks = data.filter(book => book.age_group !== 'Adult');
     updateCounts();
     renderBooks();
-  } catch {
-    document.getElementById('book-grid').innerHTML =
-      '<p style="color:#c00;padding:20px">Could not load books. Is the backend running?</p>';
+  } catch (error) {
+    count.textContent = 'Catalog unavailable';
+    grid.innerHTML =
+      '<div class="empty-state" style="grid-column:1/-1" role="alert"><h3>We couldn’t load the catalog</h3><p>Please check your connection and refresh the page to try again.</p></div>';
+    console.error('Could not load the catalog:', error);
   }
 }
 
