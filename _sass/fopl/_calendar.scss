@@ -1,0 +1,336 @@
+// Page layout; colors and controls inherit the shared FOPL theme.
+body.fopl-student .fopl-section--calendar {
+  .fopl-cal-page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 52px 40px;
+  }
+  .fopl-cal-page h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--fopl-text);
+    margin: 0 0 28px;
+    border: none;
+    text-align: center;
+  }
+  .cal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .cal-title {
+    font-size: 1.0rem;
+    font-weight: 700;
+    color: var(--fopl-text);
+  }
+  .cal-nav {
+    background: transparent;
+    border: 1.5px solid var(--fopl-line);
+    color: var(--fopl-text);
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cal-nav:hover {
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+  }
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border: 1px solid var(--fopl-line);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .cal-dow {
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 8px 0;
+  }
+  .cal-cell {
+    min-height: 72px;
+    padding: 6px 6px 4px;
+    border-right: 1px solid var(--fopl-line);
+    border-bottom: 1px solid var(--fopl-line);
+    background: var(--fopl-paper);
+    vertical-align: top;
+  }
+  .cal-cell:nth-child(7n) {
+    border-right: none;
+  }
+  .cal-cell.other-month {
+    background: var(--fopl-paper);
+  }
+  .cal-cell.today {
+    background: var(--fopl-paper);
+  }
+  .cal-day {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--fopl-text);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .cal-cell.today .cal-day {
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cal-event {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 1px 5px;
+    margin-bottom: 2px;
+    color: var(--fopl-text);
+    cursor: default;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .cal-event.admin-event {
+    cursor: pointer;
+  }
+  .cal-add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    padding: 9px 20px;
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+    border: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .cal-add-btn:hover {
+    background: var(--fopl-paper);
+  }
+  .cal-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+  }
+  .cal-modal-overlay.open {
+    display: flex;
+  }
+  .cal-modal {
+    background: var(--fopl-paper);
+    border-radius: 4px;
+    padding: 28px 28px 24px;
+    width: 360px;
+    max-width: 94vw;
+  }
+  .cal-modal h4 {
+    font-size: 1.0rem;
+    font-weight: 700;
+    color: var(--fopl-text);
+    margin: 0 0 18px;
+  }
+  .cal-modal label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--fopl-text);
+    margin: 12px 0 4px;
+  }
+  .cal-modal input, .cal-modal textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--fopl-line);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+  }
+  .cal-modal textarea {
+    resize: vertical;
+    min-height: 60px;
+  }
+  .cal-modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: flex-end;
+  }
+  .cal-modal-actions button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+  .cal-btn-save {
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+  }
+  .cal-btn-save:hover {
+    background: var(--fopl-paper);
+  }
+  .cal-btn-delete {
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+  }
+  .cal-btn-delete:hover {
+    background: var(--fopl-paper);
+  }
+  .cal-btn-cancel {
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+  }
+  .cal-btn-cancel:hover {
+    background: var(--fopl-paper);
+  }
+  .cal-color-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+    flex-wrap: wrap;
+  }
+  .cal-color-swatch {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+  .cal-color-swatch.selected {
+    border-color: var(--fopl-line);
+  }
+  .cal-cell {
+    cursor: pointer;
+  }
+  .cal-cell:hover {
+    background: var(--fopl-paper);
+  }
+  .cal-cell.today:hover {
+    background: var(--fopl-paper);
+  }
+  .cal-cell.other-month {
+    cursor: default;
+  }
+  .cal-cell.other-month:hover {
+    background: var(--fopl-paper);
+  }
+  .cal-day-detail {
+    display: none;
+    position: absolute;
+    z-index: 500;
+    background: var(--fopl-paper);
+    border: 1px solid var(--fopl-line);
+    border-radius: 4px;
+    padding: 14px 16px;
+    min-width: 200px;
+    max-width: 260px;
+  }
+  .cal-day-detail.open {
+    display: block;
+  }
+  .cal-day-detail-date {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--fopl-text);
+    margin-bottom: 8px;
+  }
+  .cal-day-detail-today-badge {
+    display: inline-block;
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .cal-day-detail-event {
+    font-size: 0.85rem;
+    color: var(--fopl-text);
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-bottom: 4px;
+  }
+  .cal-day-detail-empty {
+    font-size: 0.85rem;
+    color: var(--fopl-text);
+    font-style: italic;
+  }
+  .cal-day-detail-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.0rem;
+    color: var(--fopl-text);
+    line-height: 1;
+  }
+  .cal-day-detail-close:hover {
+    color: var(--fopl-text);
+  }
+  .cal-detail-admin-bar {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  .cal-detail-admin-btn {
+    padding: 5px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .cal-detail-btn-add {
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+  }
+  .cal-detail-btn-add:hover {
+    background: var(--fopl-paper);
+  }
+  .cal-detail-btn-edit {
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+  }
+  .cal-detail-btn-edit:hover {
+    background: var(--fopl-paper);
+  }
+  .cal-detail-btn-remove {
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+  }
+  .cal-detail-btn-remove:hover {
+    background: var(--fopl-paper);
+  }
+  @media (max-width: 640px) {
+    .fopl-cal-page {
+      padding: 36px 18px;
+    }
+    .cal-cell {
+      min-height: 52px;
+    }
+  }
+}

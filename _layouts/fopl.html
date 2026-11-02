@@ -7,11 +7,14 @@
   <meta name="description" content="{{ page.description | default: site.description }}">
   <link rel="icon" type="image/png" href="{{ '/FOTPL/Images/fopllogo.png' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/fopl-shared.css' | relative_url }}">
-  {% if page.fopl_home %}
+  {% if page.fopl_home or page.fopl_section %}
   <link rel="stylesheet" href="{{ '/assets/css/fopl-home.css' | relative_url }}">
   {% endif %}
+  {% if page.fopl_section %}
+  <link rel="stylesheet" href="{{ '/assets/css/fopl-pages.css' | relative_url }}">
+  {% endif %}
 </head>
-<body{% if page.fopl_home %} class="fopl-student"{% endif %}>
+<body{% if page.fopl_home or page.fopl_section %} class="fopl-student"{% endif %}>
   <script>if(location.protocol==='http:'&&location.hostname!=='localhost'&&location.hostname!=='127.0.0.1')location.replace('https:'+location.href.slice(5));</script>
   <script src="{{ '/assets/js/fopl-shared.js' | relative_url }}"></script>
   {% include fopl-nav.html %}

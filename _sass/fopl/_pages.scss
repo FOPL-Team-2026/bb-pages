@@ -1,0 +1,76 @@
+// Shared document styles for the library pages reached from the homepage.
+body.fopl-student {
+  .fopl-sidebar a[aria-current="page"] { font-weight: 700; text-decoration: underline; }
+  .fopl-section {
+    h1 { font-size: clamp(1.6rem, 4vw, 2.1rem); }
+    h1, h2, h3, h4 { color: var(--fopl-text); }
+    .fopl-hero, .catalog-hero, .fopl-page-heading {
+      padding: 0 0 1.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--fopl-line);
+      background: transparent;
+      p { max-width: 65ch; margin: .5rem 0; }
+    }
+    .news-content, .vol-content, .contact-content, .fopl-content, .fopl-cal-page, .fopl-games, .fopl-overall { padding: 1.5rem 0; max-width: 100%; }
+    input, select, textarea, button { font: inherit; }
+    input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]), select, textarea {
+      max-width: 100%;
+      min-width: 0;
+      padding: .55rem .65rem;
+      color: var(--fopl-text);
+      background: var(--fopl-paper);
+      border: 1px solid var(--fopl-line);
+      border-radius: 4px;
+    }
+    label { display: block; font-size: .9rem; }
+    label > input:not([type="checkbox"]):not([type="radio"]), label > select { display: block; width: 100%; margin-top: .25rem; }
+    button, .play-btn, .contact-form-btn, .latest-issue-btn {
+      padding: .5rem .8rem;
+      background: var(--fopl-paper);
+      color: var(--fopl-link);
+      border: 1px solid var(--fopl-line);
+      border-radius: 4px;
+      font-weight: 600;
+      text-transform: none;
+      cursor: pointer;
+    }
+    button:hover { border-color: var(--fopl-link); }
+    button:disabled { opacity: .6; cursor: wait; }
+    input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #b07818; outline-offset: 2px; }
+    p { overflow-wrap: anywhere; }
+    .catalog-hero-label, .hero-kicker, .vol-section-label { font-size: .9rem; color: var(--fopl-muted); }
+    .catalog-body { gap: 1.25rem; min-height: 0; padding-top: 1.5rem; }
+    .catalog-sidebar { width: 160px; min-width: 160px; padding: 0 1rem 0 0; }
+    .catalog-main { min-width: 0; padding: 0; }
+    .catalog-grid { grid-template-columns: repeat(auto-fill, minmax(165px, 1fr)); gap: 1rem; }
+    .filter-btn.active { border-color: var(--fopl-link); font-weight: 700; text-decoration: underline; }
+    .book-card:hover { border-color: var(--fopl-link); }
+    .book-cover-letters { color: #15281b; }
+    .ai-fab { bottom: 1rem; right: 1rem; }
+    .ai-panel { bottom: 4.5rem; right: 1rem; max-width: calc(100vw - 2rem); }
+    .fopl-timeline { border-left-color: var(--fopl-line); padding-left: 1.25rem; }
+    .fopl-timeline-item { margin-bottom: 1.5rem; }
+    .vol-form-status.error { color: #b53626; }
+    .cal-cell.today { outline: 2px solid var(--fopl-link); outline-offset: -2px; }
+    .cal-dow { font-weight: 700; }
+    .cal-day-detail-event, .cal-event { color: #fff; }
+    .overall-progress-fill { background: var(--fopl-link); }
+    @media (max-width: 1000px) {
+      .catalog-body { flex-direction: column; }
+      .catalog-sidebar { display: block; width: 100%; min-width: 0; border: 0; padding: 0; }
+      .filter-section { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1rem; }
+      .filter-title { width: 100%; }
+      .filter-btn { width: auto; }
+      .contact-content { grid-template-columns: 1fr; }
+      .vol-form-row { flex-wrap: wrap; }
+    }
+    @media (max-width: 600px) {
+      .catalog-search-wrap { flex-wrap: wrap; }
+      .catalog-toolbar { flex-wrap: wrap; gap: .5rem; }
+      .vol-roles-grid, .vol-why-grid { grid-template-columns: 1fr; }
+      .vol-form-row { display: block; }
+      .vol-form-field { margin-bottom: 1rem; }
+      .overall-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  }
+}

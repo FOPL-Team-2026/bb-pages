@@ -59,7 +59,7 @@ bb-pages/
 
 ### Prerequisites
 
-- Ruby and Bundler (for Jekyll)
+- Ruby 3.3.x and Bundler (for Jekyll; Ruby 4.x is not compatible with this project’s github-pages version)
 - A terminal (macOS, WSL Ubuntu, or Linux)
 
 ### Setup
