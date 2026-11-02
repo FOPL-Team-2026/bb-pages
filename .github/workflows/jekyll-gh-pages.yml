@@ -2,9 +2,9 @@
 name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 
 on:
-  # Runs on pushes targeting the default branch
+  # Deploy the FOPL fork from main or the OCS redesign branch
   push:
-    branches: ["main"]
+    branches: ["main", "fopl-homepage-library-refresh"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
