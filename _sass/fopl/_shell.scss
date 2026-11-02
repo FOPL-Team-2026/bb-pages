@@ -1,0 +1,48 @@
+body.fopl-student {
+  background: var(--fopl-page) !important; // Override legacy shared body rule.
+  color: var(--fopl-text);
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  a { color: var(--fopl-link); }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible, main:focus-visible {
+    outline: 3px solid #b07818;
+    outline-offset: 3px;
+  }
+  .fopl-course-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: .5rem 2rem;
+    padding: .6rem max(1rem, calc((100% - 1200px) / 2));
+    background: var(--fopl-paper);
+    border-bottom: 1px solid var(--fopl-line);
+    > a { font-weight: 700; }
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+  }
+  .fopl-nav {
+    background: $fopl-green;
+    padding: 0 max(1rem, calc((100% - 1200px) / 2));
+    a { color: #fff; text-transform: none; letter-spacing: normal; font-family: inherit; }
+  }
+  .fopl-nav-dropdown { background: var(--fopl-paper); }
+  .fopl-nav-dropdown li a { color: var(--fopl-link); }
+  .fopl-skip {
+    position: absolute;
+    left: -10000px;
+    &:focus { left: 1rem; z-index: 1000; padding: .5rem; background: var(--fopl-paper); }
+  }
+  .fopl-footer {
+    background: var(--fopl-paper);
+    color: var(--fopl-muted);
+    border-top: 1px solid var(--fopl-line);
+    font-family: inherit;
+    a { color: var(--fopl-link); }
+  }
+  .fopl-cal-popup { right: 0; max-width: calc(100vw - 2rem); }
+  @media (max-width: $fopl-breakpoint) {
+    .fopl-course-bar { font-size: .85rem; }
+    .fopl-nav { height: auto; flex-wrap: wrap; }
+    .fopl-nav-links li a { padding: 0 .65rem; }
+  }
+}
