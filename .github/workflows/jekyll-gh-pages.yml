@@ -28,6 +28,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -43,10 +49,14 @@ jobs:
           source venv/bin/activate  # Activate the virtual environment
           pip install -r requirements.txt  # Install Python packages
 
+
       - name: Execute notebook conversion script
+        env:
+          PYTHONPATH: ${{ github.workspace }}
         run: |
-          source venv/bin/activate  # Activate virtual environment
-          python scripts/convert_notebooks.py  # Run notebook conversion
+          source venv/bin/activate
+          python scripts/convert_notebooks.py
+
           
       - name: Execute DOCX conversion script
         run: |
