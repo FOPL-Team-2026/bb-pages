@@ -1,0 +1,57 @@
+// Page layout; colors and controls inherit the shared FOPL theme.
+body.fopl-student .fopl-section--history {
+  .fopl-hero {
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+    text-align: center;
+    padding: 64px 24px 52px;
+    border-bottom: 1px solid var(--fopl-line);
+  }
+  .fopl-hero h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--fopl-text);
+    border: none;
+  }
+  .fopl-content {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 56px 40px;
+  }
+  .fopl-content p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--fopl-text);
+    margin: 0 0 24px;
+  }
+  .fopl-timeline {
+    margin: 48px 0;
+    border-left: 3px solid var(--fopl-line);
+    padding-left: 32px;
+  }
+  .fopl-timeline-item {
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .fopl-timeline-year {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--fopl-text);
+    margin-bottom: 6px;
+  }
+  .fopl-timeline-item p {
+    margin: 0;
+    font-size: 1.0rem;
+    color: var(--fopl-text);
+    line-height: 1.8;
+  }
+  @media (max-width: 640px) {
+    .fopl-content {
+      padding: 36px 20px;
+    }
+    .fopl-hero h1 {
+      font-size: 2rem;
+    }
+  }
+}

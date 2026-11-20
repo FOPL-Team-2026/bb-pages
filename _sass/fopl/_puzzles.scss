@@ -1,0 +1,228 @@
+// Page layout; colors and controls inherit the shared FOPL theme.
+body.fopl-student .fopl-section--puzzles {
+  .fopl-hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+    text-align: center;
+    padding: 58px 24px 50px;
+    border-bottom: 1px solid var(--fopl-line);
+  }
+  .hero-kicker {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid var(--fopl-line);
+    background: var(--fopl-paper);
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+  .fopl-hero h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 10px;
+    color: var(--fopl-text);
+    border: none;
+  }
+  .fopl-hero p {
+    font-size: 1.05rem;
+    margin: 0;
+  }
+  .fopl-overall {
+    max-width: 1100px;
+    margin: 20px auto 0;
+    padding: 0 40px;
+  }
+  .overall-card {
+    background: var(--fopl-paper);
+    border: 1px solid var(--fopl-line);
+    border-radius: 4px;
+    padding: 18px 20px;
+  }
+  .overall-title {
+    margin: 0 0 10px;
+    color: var(--fopl-text);
+    font-size: 0.85rem;
+    border: none;
+  }
+  .overall-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .overall-stat {
+    background: var(--fopl-paper);
+    border: 1px solid var(--fopl-line);
+    border-radius: 4px;
+    text-align: center;
+    padding: 10px;
+  }
+  .overall-stat-num {
+    font-size: 1.28rem;
+    color: var(--fopl-text);
+    font-weight: 700;
+    line-height: 1;
+  }
+  .overall-stat-lbl {
+    margin-top: 4px;
+    font-size: 0.85rem;
+    color: var(--fopl-text);
+    font-weight: 700;
+  }
+  .overall-progress {
+    border: 1px solid var(--fopl-line);
+    background: var(--fopl-paper);
+    border-radius: 4px;
+    padding: 10px;
+  }
+  .overall-progress-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--fopl-text);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .overall-progress-track {
+    height: 8px;
+    border-radius: 4px;
+    background: var(--fopl-paper);
+    overflow: hidden;
+  }
+  .overall-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--fopl-paper);
+  }
+  .fopl-games {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 40px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .game-card {
+    background: var(--fopl-paper);
+    border: 1px solid var(--fopl-line);
+    border-radius: 4px;
+    padding: 24px 22px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .game-card:hover {
+    border-color: var(--fopl-line);
+  }
+  .game-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--fopl-paper);
+    border: 1px solid var(--fopl-line);
+    color: var(--fopl-text);
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+  }
+  .game-card h2 {
+    font-size: 1.0rem;
+    font-weight: 700;
+    color: var(--fopl-text);
+    margin: 0;
+    border: none;
+  }
+  .game-card p {
+    font-size: 0.88rem;
+    color: var(--fopl-text);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .game-meta {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .game-chip {
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 3px 9px;
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+    border: 1px solid var(--fopl-line);
+  }
+  .game-card-badge {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+    border: 1px solid var(--fopl-line);
+  }
+  .game-card-badge.soon {
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+    border-color: var(--fopl-line);
+  }
+  .game-card a.play-btn {
+    display: inline-block;
+    margin-top: auto;
+    padding: 10px 24px;
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-align: center;
+  }
+  .game-card a.play-btn:hover {
+    background: var(--fopl-paper);
+  }
+  .game-card .disabled-btn {
+    display: inline-block;
+    margin-top: auto;
+    padding: 10px 24px;
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-align: center;
+    cursor: not-allowed;
+  }
+  .fopl-footer {
+    margin-top: 16px;
+  }
+  @media (max-width: 820px) {
+    .fopl-overall, .fopl-games {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    .overall-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 620px) {
+    .fopl-hero h1 {
+      font-size: 1.75rem;
+    }
+    .fopl-hero p {
+      font-size: 0.95rem;
+    }
+    .fopl-games {
+      padding-top: 26px;
+      gap: 16px;
+    }
+  }
+}

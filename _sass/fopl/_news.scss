@@ -1,0 +1,159 @@
+// Page layout; colors and controls inherit the shared FOPL theme.
+body.fopl-student .fopl-section--news {
+  .fopl-hero {
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+    text-align: center;
+    padding: 56px 24px 48px;
+  }
+  .fopl-hero h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 10px;
+    color: var(--fopl-text);
+    border: none;
+  }
+  .fopl-hero p {
+    font-size: 1.05rem;
+    margin: 0;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  .news-content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 40px;
+  }
+  .latest-issue {
+    background: var(--fopl-paper);
+    border-radius: 4px;
+    border-top: 4px solid var(--fopl-line);
+    padding: 32px;
+    margin-bottom: 40px;
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+  }
+  .latest-issue-badge {
+    flex-shrink: 0;
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 4px;
+  }
+  .latest-issue-btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.88rem;
+  }
+  .latest-issue-btn:hover {
+    background: var(--fopl-paper);
+  }
+  .section-heading {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--fopl-text);
+    margin: 0 0 20px;
+    border: none;
+  }
+  .newsletter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  .newsletter-card {
+    background: var(--fopl-paper);
+    border-radius: 4px;
+    border-left: 4px solid var(--fopl-line);
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .newsletter-card-date {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--fopl-text);
+  }
+  .newsletter-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--fopl-text);
+    margin: 0;
+    border: none;
+  }
+  .newsletter-card p {
+    font-size: 0.92rem;
+    color: var(--fopl-text);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .newsletter-card-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 8px;
+  }
+  .newsletter-card-actions a {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--fopl-text);
+  }
+  .newsletter-card-actions a.download-btn {
+    background: var(--fopl-paper);
+    padding: 5px 12px;
+    border-radius: 4px;
+  }
+  .pdf-viewer-section {
+    background: var(--fopl-paper);
+    border-radius: 4px;
+    padding: 24px;
+    margin-bottom: 40px;
+  }
+  .pdf-viewer-section h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--fopl-text);
+    margin: 0 0 16px;
+    border: none;
+  }
+  .pdf-viewer-frame {
+    width: 100%;
+    height: 600px;
+    border: 1px solid var(--fopl-line);
+    border-radius: 4px;
+  }
+  .pdf-viewer-fallback {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--fopl-paper);
+    border-radius: 4px;
+    border: 1px dashed var(--fopl-line);
+  }
+  .pdf-viewer-fallback p {
+    color: var(--fopl-text);
+    margin: 0 0 12px;
+  }
+  @media (max-width: 640px) {
+    .news-content {
+      padding: 32px 18px;
+    }
+    .latest-issue {
+      flex-direction: column;
+    }
+    .pdf-viewer-frame {
+      height: 400px;
+    }
+  }
+}

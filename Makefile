@@ -3,6 +3,14 @@ PORT ?= 4500
 LOG_FILE = /tmp/jekyll$(PORT).log
 PYTHON := venv/bin/python3
 
+# Prefer the Ruby 3.3 toolchain on Homebrew/macOS so the github-pages gem resolves correctly.
+ifeq ($(shell uname -s),Darwin)
+BREW_RUBY_33 := $(shell if [ -x /opt/homebrew/bin/brew ]; then /opt/homebrew/bin/brew --prefix ruby@3.3 2>/dev/null; elif [ -x /usr/local/bin/brew ]; then /usr/local/bin/brew --prefix ruby@3.3 2>/dev/null; fi)
+ifneq ($(BREW_RUBY_33),)
+export PATH := $(BREW_RUBY_33)/bin:$(PATH)
+endif
+endif
+
 SHELL = /bin/bash -c
 .SHELLFLAGS = -e
 
@@ -138,11 +146,11 @@ build: build-current
 # Multi-course file splitting
 split-courses:
 	@echo " ------ Splitting multi-course files... -------"
-	@python3 scripts/split_multi_course_files.py
+	@$(PYTHON) scripts/split_multi_course_files.py
 
 clean-courses:
 	@echo "🧹 Cleaning course-specific files..."
-	@python3 scripts/split_multi_course_files.py clean
+	@$(PYTHON) scripts/split_multi_course_files.py clean
 
 # Notebook and DOCX conversion
 convert: $(MARKDOWN_FILES) convert-docx
@@ -266,16 +274,18 @@ watch-notebooks:
 		sleep 2; \
 	done
 
-# Bundle install (only runs if Gemfile changed)
+# Bundle install when gems are missing or the lockfile/setup changed
 bundle-install:
-	@if [ ! -f .bundle/install_marker ] || [ Gemfile -nt .bundle/install_marker ]; then \
+	@mkdir -p .bundle
+	@if ! bundle check >/dev/null 2>&1 || [ ! -f .bundle/install_marker ] || [ Gemfile -nt .bundle/install_marker ] || [ Gemfile.lock -nt .bundle/install_marker ]; then \
 		echo "Installing bundle..."; \
 		bundle install; \
-		mkdir -p .bundle && touch .bundle/install_marker; \
+		touch .bundle/install_marker; \
 	fi
 
 # Start Jekyll server (incremental for development, production is GitHub Actions)
 jekyll-serve: bundle-install
+	@ruby -e 'major = RUBY_VERSION.split(".").first.to_i; abort("Ruby 4.x is not supported by the github-pages gem in this project. Install Ruby 3.3 (for example: brew install ruby@3.3) and update your PATH.") if major >= 4'
 	@touch /tmp/.notebook_watch_marker
 	@bundle exec jekyll serve -H $(HOST) -P $(PORT) --incremental > $(LOG_FILE) 2>&1 & \
 		echo "Server PID: $$!"

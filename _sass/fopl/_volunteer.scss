@@ -1,0 +1,309 @@
+// Page layout; colors and controls inherit the shared FOPL theme.
+body.fopl-student .fopl-section--volunteer {
+  .fopl-hero {
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+    text-align: center;
+    padding: 64px 24px 52px;
+    border-bottom: 1px solid var(--fopl-line);
+  }
+  .fopl-hero h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 12px;
+    color: var(--fopl-text);
+    border: none;
+  }
+  .fopl-hero p {
+    font-size: 1.05rem;
+    color: var(--fopl-text);
+    margin: 0 auto;
+    max-width: 600px;
+    line-height: 1.7;
+  }
+  .vol-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 52px 40px;
+  }
+  .vol-section-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--fopl-text);
+    border-bottom: 2px solid var(--fopl-line);
+    padding-bottom: 8px;
+    margin: 0 0 28px;
+    display: block;
+  }
+  .vol-why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 56px;
+  }
+  .vol-why-card {
+    background: var(--fopl-paper);
+    border: 1px solid var(--fopl-line);
+    border-radius: 4px;
+    padding: 28px 24px;
+  }
+  .vol-why-card:hover {
+    border-color: var(--fopl-line);
+  }
+  .vol-why-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--fopl-text);
+    margin: 0 0 12px;
+    border: none;
+  }
+  .vol-why-card p {
+    font-size: 0.92rem;
+    color: var(--fopl-text);
+    line-height: 1.7;
+    margin: 0;
+  }
+  .vol-roles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 56px;
+  }
+  .vol-role-card {
+    background: var(--fopl-paper);
+    border: 1px solid var(--fopl-line);
+    border-radius: 4px;
+    padding: 28px 24px;
+  }
+  .vol-role-card:hover {
+    border-color: var(--fopl-line);
+  }
+  .vol-role-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--fopl-text);
+    margin: 0 0 8px;
+    border: none;
+  }
+  .vol-role-card p {
+    font-size: 0.9rem;
+    color: var(--fopl-text);
+    line-height: 1.7;
+    margin: 0;
+  }
+  .vol-role-tag {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    background: var(--fopl-paper);
+    border: 1px solid var(--fopl-line);
+    border-radius: 4px;
+    color: var(--fopl-text);
+    margin-top: 12px;
+  }
+  .vol-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 56px;
+    background: var(--fopl-paper);
+    border: 1px solid var(--fopl-line);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .vol-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 28px 28px;
+    border-bottom: 1px solid var(--fopl-line);
+  }
+  .vol-step:last-child {
+    border-bottom: none;
+  }
+  .vol-step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .vol-apply-wrap {
+    background: var(--fopl-paper);
+    border: 1px solid var(--fopl-line);
+    border-radius: 4px;
+    padding: 36px 32px;
+    margin-bottom: 56px;
+  }
+  .vol-apply-intro {
+    font-size: 0.97rem;
+    color: var(--fopl-text);
+    line-height: 1.8;
+    margin: 0 0 32px;
+  }
+  .vol-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .vol-form-section-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--fopl-text);
+    border-bottom: 1px solid var(--fopl-line);
+    padding-bottom: 8px;
+    margin: 32px 0 20px;
+  }
+  .vol-form-section-title:first-child {
+    margin-top: 0;
+  }
+  .vol-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+  .vol-form-row.full {
+    grid-template-columns: 1fr;
+  }
+  .vol-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .vol-form-field label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--fopl-text);
+  }
+  .vol-form-field label .opt {
+    font-weight: 400;
+    color: var(--fopl-text);
+    font-size: 0.85rem;
+  }
+  .vol-form-field input,
+  .vol-form-field select,
+  .vol-form-field textarea {
+    border: 1.5px solid var(--fopl-line);
+    border-radius: 4px;
+    padding: 12px 14px;
+    font-size: 0.9rem;
+    color: var(--fopl-text);
+    background: var(--fopl-paper);
+  }
+  .vol-form-field input::placeholder,
+  .vol-form-field select::placeholder,
+  .vol-form-field textarea::placeholder {
+    color: var(--fopl-text);
+  }
+  .vol-form-field input:focus,
+  .vol-form-field select:focus,
+  .vol-form-field textarea:focus {
+    border-color: var(--fopl-line);
+    background: var(--fopl-paper);
+  }
+  .vol-form-field textarea {
+    resize: vertical;
+    min-height: 110px;
+  }
+  .vol-check-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .vol-check-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: var(--fopl-text);
+    cursor: pointer;
+  }
+  .vol-check-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #d4a853;
+    flex-shrink: 0;
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+  .vol-form-submit {
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .vol-apply-btn {
+    display: inline-block;
+    padding: 13px 40px;
+    background: var(--fopl-paper);
+    color: var(--fopl-text);
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+  }
+  .vol-apply-btn:hover {
+    background: var(--fopl-paper);
+  }
+  .vol-form-status {
+    font-size: 0.88rem;
+    color: var(--fopl-text);
+    font-weight: 600;
+    display: none;
+  }
+  .vol-form-status.error {
+    color: var(--fopl-text);
+  }
+  @media (max-width: 580px) {
+    .vol-form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+  .vol-quote {
+    background: var(--fopl-paper);
+    border-left: 4px solid var(--fopl-line);
+    border-radius: 4px;
+    padding: 24px 28px;
+    margin-bottom: 56px;
+    border: 1px solid var(--fopl-line);
+  }
+  .vol-quote p {
+    font-size: 1.0rem;
+    color: var(--fopl-text);
+    line-height: 1.8;
+    font-style: italic;
+    margin: 0 0 10px;
+  }
+  .vol-quote cite {
+    font-size: 0.85rem;
+    color: var(--fopl-text);
+    font-style: normal;
+    font-weight: 700;
+  }
+  @media (max-width: 700px) {
+    .vol-content {
+      padding: 36px 18px;
+    }
+    .vol-why-grid {
+      grid-template-columns: 1fr;
+    }
+    .vol-roles-grid {
+      grid-template-columns: 1fr;
+    }
+    .fopl-hero h1 {
+      font-size: 2rem;
+    }
+  }
+}

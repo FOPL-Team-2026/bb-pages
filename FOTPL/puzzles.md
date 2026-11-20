@@ -1,214 +1,13 @@
 ---
-layout: fopl
+layout: fopl-section
 title: Puzzles — Friends of the Poway Library
 permalink: /puzzles
 description: Play word games and puzzles from the Friends of the Poway Library.
+fopl_section: puzzles
 fopl_nav_active: puzzles
 ---
 
-<style>
-  body { background: #0f1a12; }
 
-  .fopl-hero {
-    position: relative;
-    overflow: hidden;
-    background:
-      radial-gradient(ellipse at 20% 50%, rgba(212,168,83,0.07) 0%, transparent 55%),
-      radial-gradient(ellipse at 80% 20%, rgba(45,184,77,0.04) 0%, transparent 50%),
-      #0f1a12;
-    color: #fff;
-    text-align: center;
-    padding: 58px 24px 50px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-  .hero-kicker {
-    display: inline-block;
-    margin-bottom: 10px;
-    padding: 6px 12px;
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.4);
-    background: rgba(255,255,255,0.12);
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.09em;
-  }
-  .fopl-hero h1 {
-    font-family: 'Cabin', sans-serif; font-size: 2.2rem; font-weight: 700;
-    margin: 0 0 10px; letter-spacing: 0.04em; color: #fff; border: none;
-    text-transform: uppercase;
-  }
-
-  .fopl-hero p { font-size: 1.05rem; opacity: 0.88; margin: 0; }
-
-  .fopl-overall {
-    max-width: 1100px;
-    margin: 20px auto 0;
-    padding: 0 40px;
-  }
-  .overall-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
-    padding: 18px 20px;
-  }
-  .overall-title {
-    margin: 0 0 10px;
-    font-family: 'Cabin', sans-serif;
-    color: rgba(212,168,83,0.7);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 0.72rem;
-    border: none;
-  }
-  .overall-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 10px;
-    margin-bottom: 12px;
-  }
-  .overall-stat {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 8px;
-    text-align: center;
-    padding: 10px;
-  }
-  .overall-stat-num {
-    font-family: 'Cabin', sans-serif;
-    font-size: 1.28rem;
-    color: #d4a853;
-    font-weight: 700;
-    line-height: 1;
-  }
-  .overall-stat-lbl {
-    margin-top: 4px;
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: rgba(255,255,255,0.4);
-    font-weight: 700;
-  }
-  .overall-progress {
-    border: 1px solid rgba(255,255,255,0.07);
-    background: rgba(255,255,255,0.03);
-    border-radius: 7px;
-    padding: 10px;
-  }
-  .overall-progress-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 0.72rem;
-    color: rgba(255,255,255,0.45);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 6px;
-  }
-  .overall-progress-track {
-    height: 8px;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.08);
-    overflow: hidden;
-  }
-  .overall-progress-fill {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(90deg, #d4a853, #e8c97a);
-    transition: width 0.45s ease;
-  }
-
-  .fopl-games {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 20px; padding: 40px 40px; max-width: 1100px; margin: 0 auto;
-  }
-
-  .game-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.09);
-    border-radius: 14px;
-    padding: 24px 22px 22px;
-    display: flex; flex-direction: column; gap: 12px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s;
-  }
-  .game-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 28px rgba(0,0,0,0.3);
-    border-color: rgba(212,168,83,0.25);
-  }
-  .game-card.coming-soon { opacity: 0.5; }
-  .game-card-icon {
-    width: 48px; height: 48px;
-    border-radius: 50%;
-    background: rgba(212,168,83,0.1);
-    border: 1px solid rgba(212,168,83,0.2);
-    color: #d4a853;
-    font-family: 'Cabin', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-  }
-  .game-card h2 {
-    font-family: 'Cabin', sans-serif; font-size: 1rem; font-weight: 700;
-    color: #fff; text-transform: uppercase; letter-spacing: 0.04em;
-    margin: 0; border: none;
-  }
-  .game-card p { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.6; margin: 0; }
-  .game-meta { display: flex; gap: 6px; flex-wrap: wrap; }
-  .game-chip {
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    font-weight: 700;
-    border-radius: 999px;
-    padding: 3px 9px;
-    background: rgba(255,255,255,0.06);
-    color: rgba(255,255,255,0.55);
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-  .game-card-badge {
-    display: inline-block; font-size: 0.65rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 10px;
-    border-radius: 20px; background: rgba(212,168,83,0.15); color: #d4a853;
-    border: 1px solid rgba(212,168,83,0.25);
-  }
-  .game-card-badge.soon { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.3); border-color: rgba(255,255,255,0.08); }
-  .game-card a.play-btn {
-    display: inline-block; margin-top: auto;
-    padding: 10px 24px; background: #d4a853; color: #1a1200; text-decoration: none;
-    border-radius: 6px; font-family: 'Cabin', sans-serif; font-weight: 700;
-    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.07em;
-    transition: background 0.2s, transform 0.2s; text-align: center;
-  }
-  .game-card a.play-btn:hover { background: #e0bd70; transform: translateY(-1px); }
-  .game-card .disabled-btn {
-    display: inline-block; margin-top: auto;
-    padding: 10px 24px; background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.25);
-    border-radius: 6px; font-family: 'Cabin', sans-serif; font-weight: 700;
-    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.07em;
-    text-align: center; cursor: not-allowed;
-  }
-
-  .fopl-footer { margin-top: 16px; }
-
-  @media (max-width: 820px) {
-    .fopl-overall, .fopl-games { padding-left: 16px; padding-right: 16px; }
-    .overall-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  }
-
-  @media (max-width: 620px) {
-    .fopl-hero h1 { font-size: 1.75rem; }
-    .fopl-hero p { font-size: 0.95rem; }
-    .fopl-games { padding-top: 26px; gap: 16px; }
-  }
-</style>
 
 <div class="fopl-hero">
   <span class="hero-kicker">Poway Library Game Hub</span>
@@ -249,7 +48,7 @@ fopl_nav_active: puzzles
       <span class="game-chip">Word</span>
       <span class="game-chip">Logic</span>
     </div>
-    <a class="play-btn" href="/wordle">Play Now</a>
+    <a class="play-btn" href="{{ '/wordle' | relative_url }}">Play Now</a>
   </div>
 
   <div class="game-card">
@@ -262,7 +61,7 @@ fopl_nav_active: puzzles
       <span class="game-chip">Quiz</span>
       <span class="game-chip">Classics</span>
     </div>
-    <a class="play-btn" href="/book-trivia">Play Now</a>
+    <a class="play-btn" href="{{ '/book-trivia' | relative_url }}">Play Now</a>
   </div>
 
   <div class="game-card">
@@ -275,7 +74,7 @@ fopl_nav_active: puzzles
       <span class="game-chip">Puzzle</span>
       <span class="game-chip">Covers</span>
     </div>
-    <a class="play-btn" href="/cover-guessr">Play Now</a>
+    <a class="play-btn" href="{{ '/cover-guessr' | relative_url }}">Play Now</a>
   </div>
 
   <div class="game-card">
@@ -288,7 +87,7 @@ fopl_nav_active: puzzles
       <span class="game-chip">Word</span>
       <span class="game-chip">Daily</span>
     </div>
-    <a class="play-btn" href="/word-scramble">Play Now</a>
+    <a class="play-btn" href="{{ '/word-scramble' | relative_url }}">Play Now</a>
   </div>
 
   <div class="game-card">
@@ -301,7 +100,7 @@ fopl_nav_active: puzzles
       <span class="game-chip">Sorting</span>
       <span class="game-chip">Keyboard</span>
     </div>
-    <a class="play-btn" href="/library-shelf-run">Play Now</a>
+    <a class="play-btn" href="{{ '/library-shelf-run' | relative_url }}">Play Now</a>
   </div>
 
   <div class="game-card">
@@ -314,7 +113,7 @@ fopl_nav_active: puzzles
       <span class="game-chip">Fun</span>
       <span class="game-chip">Books</span>
     </div>
-    <a class="play-btn" href="/face-match">Play Now</a>
+    <a class="play-btn" href="{{ '/face-match' | relative_url }}">Play Now</a>
   </div>
 
   <div class="game-card">
@@ -327,7 +126,7 @@ fopl_nav_active: puzzles
       <span class="game-chip">Action</span>
       <span class="game-chip">Keyboard</span>
     </div>
-    <a class="play-btn" href="/library-dodge">Play Now</a>
+    <a class="play-btn" href="{{ '/library-dodge' | relative_url }}">Play Now</a>
   </div>
 
 </div>

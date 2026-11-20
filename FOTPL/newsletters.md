@@ -1,130 +1,13 @@
 ---
-layout: fopl
+layout: fopl-section
 title: Newsletters — Friends of the Poway Library
 permalink: /news
 description: Read past issues of The Open Book, the official newsletter of the Friends of the Poway Library.
+fopl_section: news
 fopl_nav_active: news
 ---
 
-<style>
-  body { background: #f4f8f4; }
 
-  /* ── Hero ── */
-  .fopl-hero {
-    background: #0f1a12; color: #fff; text-align: center; padding: 56px 24px 48px;
-  }
-  .fopl-hero h1 {
-    font-family: 'Cabin', sans-serif; font-size: 2.2rem; font-weight: 700;
-    margin: 0 0 10px; color: #fff; border: none; text-transform: uppercase; letter-spacing: 0.04em;
-  }
-  .fopl-hero p { font-size: 1.05rem; opacity: 0.85; margin: 0; max-width: 600px; margin: 0 auto; line-height: 1.7; }
-
-  /* ── Content ── */
-  .news-content {
-    max-width: 960px; margin: 0 auto; padding: 48px 40px;
-  }
-
-  /* ── Latest issue highlight ── */
-  .latest-issue {
-    background: #fff; border-radius: 8px;
-    box-shadow: 0 2px 16px rgba(2,59,15,0.1);
-    border-top: 4px solid #023b0f;
-    padding: 32px; margin-bottom: 40px;
-    display: flex; gap: 28px; align-items: flex-start;
-  }
-  .latest-issue-badge {
-    flex-shrink: 0; background: #023b0f; color: #fff;
-    font-family: 'Cabin', sans-serif; font-size: 0.72rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.08em;
-    padding: 5px 12px; border-radius: 20px;
-  }
-  .latest-issue-body { flex: 1; }
-  .latest-issue-body h2 {
-    font-family: 'Cabin', sans-serif; font-size: 1.3rem; font-weight: 700;
-    color: #023b0f; margin: 0 0 8px; border: none; text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
-  .latest-issue-body p {
-    font-size: 0.97rem; color: #555; line-height: 1.65; margin: 0 0 16px;
-  }
-  .latest-issue-btn {
-    display: inline-block; padding: 10px 24px; background: #023b0f; color: #fff;
-    text-decoration: none; border-radius: 4px;
-    font-family: 'Cabin', sans-serif; font-weight: 700; font-size: 0.88rem;
-    text-transform: uppercase; letter-spacing: 0.05em; transition: background 0.2s;
-  }
-  .latest-issue-btn:hover { background: #045218; }
-
-  /* ── Section heading ── */
-  .section-heading {
-    font-family: 'Cabin', sans-serif; font-size: 1.2rem; font-weight: 700;
-    color: #023b0f; text-transform: uppercase; letter-spacing: 0.05em;
-    margin: 0 0 20px; border: none;
-  }
-
-  /* ── Newsletter grid ── */
-  .newsletter-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px; margin-bottom: 40px;
-  }
-  .newsletter-card {
-    background: #fff; border-radius: 6px;
-    box-shadow: 0 2px 10px rgba(2,59,15,0.07);
-    border-left: 4px solid #023b0f;
-    padding: 20px 24px;
-    display: flex; flex-direction: column; gap: 8px;
-  }
-  .newsletter-card-date {
-    font-family: 'Cabin', sans-serif; font-size: 0.78rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.07em; color: #6b756b;
-  }
-  .newsletter-card h3 {
-    font-family: 'Cabin', sans-serif; font-size: 1.05rem; font-weight: 700;
-    color: #023b0f; margin: 0; border: none;
-  }
-  .newsletter-card p {
-    font-size: 0.92rem; color: #555; line-height: 1.55; margin: 0;
-  }
-  .newsletter-card-actions {
-    display: flex; gap: 12px; margin-top: auto; padding-top: 8px;
-  }
-  .newsletter-card-actions a {
-    font-family: 'Cabin', sans-serif; font-size: 0.8rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.05em;
-    text-decoration: none; color: #023b0f; transition: opacity 0.2s;
-  }
-  .newsletter-card-actions a:hover { opacity: 0.7; }
-  .newsletter-card-actions a.download-btn {
-    background: #e8f5e9; padding: 5px 12px; border-radius: 4px;
-  }
-
-  /* ── PDF Viewer ── */
-  .pdf-viewer-section {
-    background: #fff; border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(2,59,15,0.08);
-    padding: 24px; margin-bottom: 40px;
-  }
-  .pdf-viewer-section h2 {
-    font-family: 'Cabin', sans-serif; font-size: 1.1rem; font-weight: 700;
-    color: #023b0f; text-transform: uppercase; letter-spacing: 0.04em;
-    margin: 0 0 16px; border: none;
-  }
-  .pdf-viewer-frame {
-    width: 100%; height: 600px; border: 1px solid #dce8dc; border-radius: 4px;
-  }
-  .pdf-viewer-fallback {
-    display: none; text-align: center; padding: 40px 20px;
-    background: #f4f8f4; border-radius: 4px; border: 1px dashed #b8c8b8;
-  }
-  .pdf-viewer-fallback p { color: #555; margin: 0 0 12px; }
-
-  @media (max-width: 640px) {
-    .news-content { padding: 32px 18px; }
-    .latest-issue { flex-direction: column; }
-    .pdf-viewer-frame { height: 400px; }
-  }
-</style>
 
 <div class="fopl-hero">
   <h1>Newsletter Library</h1>
@@ -135,13 +18,13 @@ fopl_nav_active: news
   <!-- Latest issue -->
   <div class="latest-issue">
     <div>
-      <span class="latest-issue-badge">Latest Issue</span>
+      <span class="latest-issue-badge">Featured issue</span>
     </div>
     <div class="latest-issue-body">
       <h2>The Open Book — Jan&ndash;Mar 2024</h2>
-      <p>The newest edition of our quarterly newsletter featuring upcoming events, bookstore updates, volunteer spotlights, and community news.</p>
+      <p>This edition of our quarterly newsletter featuring upcoming events, bookstore updates, volunteer spotlights, and community news.</p>
       <a class="latest-issue-btn" href="https://img1.wsimg.com/blobby/go/1261387c-c13d-44e7-b4b8-53ebdce2bc66/downloads/FOPL%20Newsletter%20Jan%20-%20Mar%202024.pdf?ver=1708122693871" target="_blank" rel="noopener">
-        Read Latest Issue (PDF)
+        Read Featured issue (PDF)
       </a>
     </div>
   </div>
@@ -215,10 +98,8 @@ fopl_nav_active: news
         Save the date for our next <strong>Big Book Sale</strong>! Check back for dates and times.
         Members of the Friends of the Poway Library get early shopping access and extra perks.
       </p>
-      <a class="latest-issue-btn" href="/contact">Become a Member</a>
+      <a class="latest-issue-btn" href="{{ '/contact' | relative_url }}">Become a Member</a>
     </div>
   </div>
 
 </div>
-
-

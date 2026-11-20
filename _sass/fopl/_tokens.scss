@@ -1,0 +1,19 @@
+// FOPL colors with a quiet OCS-style document layout.
+$fopl-green: #24583b;
+$fopl-breakpoint: 760px;
+body.fopl-student {
+  --fopl-paper: #fff;
+  --fopl-page: #f6f7f5;
+  --fopl-text: #26352c;
+  --fopl-muted: #526257;
+  --fopl-line: #d7dfd8;
+  --fopl-link: #24583b;
+  &.fopl-dark {
+    --fopl-paper: #1c2721;
+    --fopl-page: #141d18;
+    --fopl-text: #e6eee8;
+    --fopl-muted: #b2c3b7;
+    --fopl-line: #42554a;
+    --fopl-link: #acd5b6;
+  }
+}

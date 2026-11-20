@@ -1,0 +1,14 @@
+<aside class="fopl-sidebar" aria-label="FOPL project navigation">
+  <p class="fopl-label">AP CSP · Capstone</p>
+  <h2>FOPL project</h2>
+  <nav aria-label="Library pages">
+    <a href="{{ '/home' | relative_url }}">Home</a>
+    {% assign sections = 'bookstore|Bookstore,catalog|Book catalog,calendar|Events calendar,volunteer|Volunteer,news|Newsletters,history|Our history,puzzles|Puzzles &amp; games,contact|Contact us' | split: ',' %}
+    {% for section in sections %}
+      {% assign item = section | split: '|' %}
+      <a href="{{ item[0] | prepend: '/' | relative_url }}"{% if page.fopl_section == item[0] %} aria-current="page"{% endif %}>{{ item[1] }}</a>
+    {% endfor %}
+  </nav>
+  <p>Built by the FOPL student team with Open Coding Society.</p>
+  <a href="https://pages.opencodingsociety.com/csp/week-11/">Week 11 reference →</a>
+</aside>

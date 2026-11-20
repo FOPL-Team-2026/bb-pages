@@ -15,13 +15,14 @@ add_to_bashrc() {
 # 0. Aliases and Virtualenv Prompt
 add_to_bashrc 'alias code="code --no-sandbox"'
 
-# 1. Brew Packages (Python & Ruby)
+# 1. Install compiler toolchain if needed, then Brew Packages (Python & Ruby)
+xcode-select --install 2>/dev/null || true
 brew update
-brew install python ruby
+brew install python ruby@3.3
 
 # 2. Ruby Gems
-# Add Homebrew Ruby to PATH (before system Ruby)
-RUBY_PATH=$(brew --prefix ruby)/bin
+# Use the supported Ruby 3.x toolchain for github-pages; Ruby 4.x is incompatible with this project.
+RUBY_PATH=$(brew --prefix ruby@3.3)/bin
 add_to_bashrc "export PATH=\"$RUBY_PATH:\$PATH\""
 
 # Set GEM_HOME to user-accessible location

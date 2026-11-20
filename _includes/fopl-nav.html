@@ -1,7 +1,19 @@
-<nav class="fopl-nav">
+{% if page.fopl_home or page.fopl_section %}
+<div class="fopl-course-bar">
+  <a href="https://pages.opencodingsociety.com/">Open Coding Society</a>
+  <nav aria-label="OCS resources">
+    <a href="https://pages.opencodingsociety.com/csp/">CSP</a>
+    <a href="https://pages.opencodingsociety.com/capstone/">Capstone</a>
+    <a href="https://pages.opencodingsociety.com/navigation/sass/">SASS</a>
+    <a href="https://github.com/FOPL-Team-2026/bb-pages">Project source</a>
+  </nav>
+</div>
+<a class="fopl-skip" href="#main-content">Skip to content</a>
+{% endif %}
+<nav class="fopl-nav" aria-label="FOPL navigation">
   <div class="fopl-nav-left">
     <ul class="fopl-nav-links fopl-nav-links--left">
-      <li{% if page.fopl_nav_active == 'home' %} class="active"{% endif %}><a href="{{ '/home' | relative_url }}">Home</a></li>
+      <li{% if page.fopl_nav_active == 'home' %} class="active"{% endif %}><a href="{{ '/home' | relative_url }}"{% if page.fopl_nav_active == 'home' %} aria-current="page"{% endif %}>Home</a></li>
       <li{% if page.fopl_nav_active == 'bookstore' %} class="active"{% endif %}><a href="{{ '/bookstore' | relative_url }}">Shop</a></li>
     </ul>
   </div>
