@@ -19,7 +19,10 @@ permalink: /fopl-connection-test/
 (function () {
   "use strict";
 
-  const API_URL = "http://localhost:8321/api/fopl/connection";
+  
+const API_URL =
+  "https://fopl-flask.opencodingsociety.com/api/fopl/connection";
+
 
   async function testBackend() {
     const status = document.getElementById("connection-status");
